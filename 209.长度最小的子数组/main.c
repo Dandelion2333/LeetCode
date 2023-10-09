@@ -50,16 +50,7 @@ int minSubArrayLen(int target, int *nums, int numsSize)
         // 向右边累加
         val = val + nums[left];
 
-        // 当相等的时候，记录当前子序列个数
-        if (val == target)
-        {
-            tmp = left - right + 1;
-            // 更新最小子序列个数
-            if (tmp < min)
-            {
-                min = tmp;
-            }
-        }
+        // 当相等或者大于的时候，记录当前子序列个数
         while (val >= target)
         {
             // 当大于的时候，记录当前子序列个数
